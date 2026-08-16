@@ -37,7 +37,7 @@ class TrainingConfig:
     warmup_steps: int = 500
     logging_steps: int = 100
     save_strategy: str = "epoch"
-    evaluation_strategy: str = "epoch"
+    eval_strategy: str = "epoch"
     fp16: bool = True  # Use mixed precision on GPU
 
 
