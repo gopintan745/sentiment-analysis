@@ -15,7 +15,7 @@ def build_trainer(model, train_dataset, eval_dataset, tokenizer):
         warmup_steps=config.training.warmup_steps,
         logging_steps=config.training.logging_steps,
         save_strategy=config.training.save_strategy,
-        evaluation_strategy=config.training.evaluation_strategy,
+        eval_strategy=config.training.eval_strategy,
         fp16=config.training.fp16,
         report_to="none",  # set to "wandb" if you want to log
         load_best_model_at_end=True,
