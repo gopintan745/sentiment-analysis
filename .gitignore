@@ -1,6 +1,6 @@
 # Models & data
 checkpoints/
-models/
+models/instances/
 outputs/
 *.bin
 *.safetensors
