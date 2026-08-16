@@ -1,13 +1,17 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+HF_USERNAME = os.getenv("HF_USERNAME", "")
 
 
 @dataclass
 class DataConfig:
-    dataset_name: str = "imdb"
+    dataset_name: str = "stanfordnlp/imdb"
     text_column: str = "text"
     label_column: str = "label"
     max_length: int = 256
@@ -39,7 +43,7 @@ class TrainingConfig:
 
 @dataclass
 class HubConfig:
-    repo_id: str = f"{os.getenv('HF_USERNAME', 'your-username')}/sentiment-distilbert-imdb"
+    repo_id: str = f"{HF_USERNAME}/sentiment-distilbert-imdb"
     private: bool = False
 
 
