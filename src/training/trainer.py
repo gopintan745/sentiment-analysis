@@ -1,6 +1,6 @@
 from transformers import Trainer, TrainingArguments, DataCollatorWithPadding
 from configs.config import config
-from training.evaluate import compute_metrics
+from src.training.evaluate import compute_metrics
 
 
 def build_trainer(model, train_dataset, eval_dataset, tokenizer):
